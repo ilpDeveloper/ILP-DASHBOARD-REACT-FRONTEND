@@ -23,6 +23,7 @@ import Products from "./pages/Products/Products";
 import TrendingProducts from "./components/TrendingProducts/TrendingProduct";
 import TrendingCategory from "./components/TrendingCategory/TrendingCategory";
 import Categories from "./pages/Category/Categories";
+import SuppliersPage from "./pages/Suppliers/Suppliers";
 
 export default function App() {
   return (
@@ -51,6 +52,7 @@ export default function App() {
             {/* Others Page */}
             <Route path="/products" element={<Products />} />
             <Route path="/Category" element={<Categories />} />
+            <Route path="/suppliers" element={<SuppliersPage />} />
             <Route path="/TrendingProducts" element={<TrendingProducts />} />
             <Route path="/TrendingCategory" element={<TrendingCategory/>} />
             <Route path="/profile" element={<UserProfiles />} />

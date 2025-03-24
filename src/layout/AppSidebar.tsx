@@ -45,6 +45,11 @@ const navItems: NavItem[] = [
         name: "Category", 
         path: "/Category", 
         pro: false,
+      },
+      { 
+        name: "Supplier", 
+        path: "/Suppliers", 
+        pro: false,
       }
     ],
   },

@@ -2,22 +2,22 @@ import { useState, useEffect } from "react";
 import { IoClose } from "react-icons/io5";
 import { FaTrash } from "react-icons/fa";
 
-interface DeleteProductModalProps {
-  productTitle: string;
+interface DeleteSupplierModalProps {
+  supplierName: string;
   onConfirm: () => void;
   onClose: () => void;
 }
 
-const DeleteProductModal = ({ productTitle, onConfirm, onClose }: DeleteProductModalProps) => {
+const DeleteSupplierModal = ({ supplierName, onConfirm, onClose }: DeleteSupplierModalProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setIsOpen(true); // Open modal on mount
+    setIsOpen(true);
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    setTimeout(onClose, 300); // Match transition duration
+    setTimeout(onClose, 300);
   };
 
   const handleConfirm = () => {
@@ -25,7 +25,7 @@ const DeleteProductModal = ({ productTitle, onConfirm, onClose }: DeleteProductM
     setTimeout(() => {
       onConfirm();
       onClose();
-    }, 300); // Match transition duration
+    }, 300);
   };
 
   return (
@@ -45,9 +45,9 @@ const DeleteProductModal = ({ productTitle, onConfirm, onClose }: DeleteProductM
         >
           <IoClose size={20} />
         </button>
-        <h2 className="text-lg font-bold text-dark-900 dark:text-white mb-4">Delete Product</h2>
+        <h2 className="text-lg font-bold text-dark-900 dark:text-white mb-4">Delete Supplier</h2>
         <p className="text-sm text-dark-700 dark:text-gray-300 mb-4">
-          Are you sure you want to delete <span className="font-medium">{productTitle}</span>? This action cannot be undone.
+          Are you sure you want to delete <span className="font-medium">{supplierName}</span>? This action cannot be undone.
         </p>
         <div className="flex justify-end gap-3">
           <button
@@ -69,4 +69,4 @@ const DeleteProductModal = ({ productTitle, onConfirm, onClose }: DeleteProductM
   );
 };
 
-export default DeleteProductModal;
+export default DeleteSupplierModal;
